@@ -1,0 +1,331 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeVerse | Entertainment</title>
+
+    <!-- SIDEBAR CSS -->
+    <link rel="stylesheet" href="../components/sidebar.css">
+    <link rel="stylesheet" href="../components/header.css">
+     
+    <!-- ENTERTAINMENT CSS -->
+    <link rel="stylesheet" href="entertainment.css">
+</head>
+
+<body data-page="entertainment">
+
+    <div class="cv-layout">
+
+        <!-- SIDEBAR -->
+        <div id="sidebar-container"></div>
+
+        <!-- MAIN CONTENT -->
+        <main class="cv-main">
+
+            <!-- HEADER -->
+        <div id="header-container"></div>
+            <!-- HERO SECTION -->
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        LEARN • PLAY • IMPROVE
+                    </span>
+
+                    <h1>Welcome to Fun Zone!</h1>
+
+                    <p>
+                        Make learning fun with exciting coding games.
+                        Challenge yourself and improve your skills.
+                    </p>
+
+                    <a href="#games" class="hero-button">
+                        Explore Games →
+                    </a>
+
+                </div>
+
+                <div class="hero-art">
+
+                    <div class="code-symbol">
+                        &lt;/&gt;
+                    </div>
+
+                    <div class="circle circle-one"></div>
+                    <div class="circle circle-two"></div>
+
+                </div>
+
+            </section>
+
+            <!-- STATISTICS -->
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon points-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+                        <h3 id="totalPoints">0</h3>
+                        <p>Total Points</p>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon games-icon">
+                        🎮
+                    </div>
+
+                    <div>
+                        <h3 id="playedGames">0</h3>
+                        <p>Games Played</p>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon level-icon">
+                        🏆
+                    </div>
+
+                    <div>
+                        <h3 id="level">Beginner</h3>
+                        <p>Your Level</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- GAMES SECTION -->
+            <section class="games-section" id="games">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Explore Coding Games</h2>
+
+                        <p>
+                            Choose your favorite game and start playing.
+                        </p>
+                    </div>
+
+                    <span class="game-count">
+                        04 GAMES
+                    </span>
+
+                </div>
+
+                <div class="games-grid">
+
+                    <!-- GAME 1 -->
+                    <div class="game-card">
+
+                        <div class="game-icon blue">
+                            &lt;/&gt;
+                        </div>
+
+                        <span class="game-category">
+                            JAVASCRIPT
+                        </span>
+
+                        <h3>Guess the Output</h3>
+
+                        <p>
+                            Test your knowledge by guessing
+                            the output of JavaScript code.
+                        </p>
+
+                        <div class="game-footer">
+
+                            <span>⭐ 10 Points</span>
+
+                            <button onclick="startGame('guess')">
+                                Play Now →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- GAME 2 -->
+                    <div class="game-card">
+
+                        <div class="game-icon purple">
+                            🐞
+                        </div>
+
+                        <span class="game-category">
+                            DEBUGGING
+                        </span>
+
+                        <h3>Find the Bug</h3>
+
+                        <p>
+                            Find the hidden error in the
+                            programming code.
+                        </p>
+
+                        <div class="game-footer">
+
+                            <span>⭐ 15 Points</span>
+
+                            <button onclick="startGame('bug')">
+                                Play Now →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- GAME 3 -->
+                    <div class="game-card">
+
+                        <div class="game-icon cyan">
+                            🧩
+                        </div>
+
+                        <span class="game-category">
+                            CODE PUZZLE
+                        </span>
+
+                        <h3>Code Puzzle</h3>
+
+                        <p>
+                            Arrange the code lines in the
+                            correct programming order.
+                        </p>
+
+                        <div class="game-footer">
+
+                            <span>⭐ 20 Points</span>
+
+                            <button onclick="startGame('puzzle')">
+                                Play Now →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- GAME 4 -->
+                    <div class="game-card">
+
+                        <div class="game-icon pink">
+                            🧠
+                        </div>
+
+                        <span class="game-category">
+                            MEMORY GAME
+                        </span>
+
+                        <h3>Memory Match</h3>
+
+                        <p>
+                            Match programming languages
+                            and test your memory.
+                        </p>
+
+                        <div class="game-footer">
+
+                            <span>⭐ 15 Points</span>
+
+                            <button onclick="startGame('memory')">
+                                Play Now →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- DAILY CHALLENGE -->
+            <section class="daily-challenge">
+
+                <div>
+
+                    <span class="daily-label">
+                        DAILY CHALLENGE
+                    </span>
+
+                    <h2>
+                        Ready for today's challenge?
+                    </h2>
+
+                    <p>
+                        Complete a coding game and earn
+                        more points today.
+                    </p>
+
+                </div>
+
+                <button onclick="startGame('guess')">
+                    Start Challenge →
+                </button>
+
+            </section>
+
+            <!-- GAME AREA -->
+            <section class="game-area" id="gameArea" hidden>
+
+                <div class="game-header">
+
+                    <div>
+
+                        <p class="breadcrumb">
+                            PLAYING NOW
+                        </p>
+
+                        <h2 id="gameTitle">
+                            Game Title
+                        </h2>
+
+                    </div>
+
+                    <button
+                        class="close-button"
+                        onclick="closeGame()">
+
+                        ✕ Close
+
+                    </button>
+
+                </div>
+
+                <div id="gameContent"></div>
+
+                <p id="gameFeedback" class="feedback"></p>
+
+            </section>
+
+            <!-- FOOTER -->
+            <footer>
+
+                © 2026 CodeVerse. All Rights Reserved.
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="../components/sidebar.js"></script>
+    <script src="../components/header.js"></script>
+    <script src="entertainment.js"></script>
+
+</body>
+
+</html>

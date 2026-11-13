@@ -1,0 +1,414 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeVerse | My Profile</title>
+
+    <!-- SHARED SIDEBAR CSS -->
+    <link rel="stylesheet" href="../components/sidebar.css">
+
+    <!-- PROFILE CSS -->
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body data-page="profile">
+
+<div class="cv-layout">
+
+    <!-- SHARED SIDEBAR -->
+    <div id="sidebar-container"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="cv-main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">CODEVERSE / MY PROFILE</p>
+                <h2>My Profile</h2>
+            </div>
+
+            <div class="top-actions">
+                <button class="notification">♧</button>
+                <div class="top-avatar" id="topAvatar">U</div>
+            </div>
+
+        </header>
+
+        <!-- PROFILE HERO -->
+        <section class="profile-hero">
+
+            <div class="profile-cover"></div>
+
+            <div class="profile-main">
+
+                <div class="profile-photo" id="profilePhoto">
+                    <img id="profileImage"
+                         src="./profile.jpg"
+                         alt="Profile Picture">
+                </div>
+
+                <div class="profile-details">
+
+                    <div class="name-row">
+                        <h1 id="displayName">Your Name</h1>
+                        <span class="verified">✓ Student</span>
+                    </div>
+
+                    <p id="displayEmail">yourname@email.com</p>
+
+                    <p class="member-info">
+                        <span>◉ CodeVerse Student</span>
+                        <span>✦ Learning Member</span>
+                    </p>
+
+                </div>
+
+                <button class="edit-btn" id="editProfileBtn">
+                    ✎ Edit Profile
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- STATS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon points">⭐</div>
+                <div>
+                    <h2 id="totalPoints">0</h2>
+                    <p>Total Points</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon courses">📚</div>
+                <div>
+                    <h2 id="coursesCompleted">0</h2>
+                    <p>Courses Completed</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon games">🎮</div>
+                <div>
+                    <h2 id="gamesPlayed">0</h2>
+                    <p>Games Played</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon level">🏆</div>
+                <div>
+                    <h2 id="userLevel">Beginner</h2>
+                    <p>Current Level</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- PROFILE CONTENT -->
+        <section class="content-grid">
+
+            <!-- LEFT COLUMN -->
+            <div class="left-column">
+
+                <!-- PERSONAL INFORMATION -->
+                <div class="content-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>Personal Information</h2>
+                            <p>Your account details</p>
+                        </div>
+
+                        <button class="text-btn" id="editInfoBtn">
+                            Edit Details
+                        </button>
+                    </div>
+
+                    <div class="info-grid">
+
+                        <div class="info-item">
+                            <span>Full Name</span>
+                            <strong id="infoName">Your Name</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span>Email Address</span>
+                            <strong id="infoEmail">yourname@email.com</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span>Username</span>
+                            <strong id="infoUsername">@student</strong>
+                        </div>
+
+                        <div class="info-item">
+                            <span>Member Since</span>
+                            <strong id="joinDate">November 2026</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- LEARNING PROGRESS -->
+                <div class="content-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>Learning Progress</h2>
+                            <p>Track your programming skills</p>
+                        </div>
+
+                        <span class="progress-label">MY SKILLS</span>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-heading">
+                            <span>HTML</span>
+                            <strong>80%</strong>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill html-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-heading">
+                            <span>CSS</span>
+                            <strong>65%</strong>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill css-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-heading">
+                            <span>JavaScript</span>
+                            <strong>40%</strong>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill js-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-heading">
+                            <span>React</span>
+                            <strong>20%</strong>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill react-fill"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ACHIEVEMENTS -->
+                <div class="content-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>My Achievements</h2>
+                            <p>Celebrate your learning milestones</p>
+                        </div>
+                    </div>
+
+                    <div class="achievements-grid">
+
+                        <div class="achievement">
+                            <div class="medal gold">🏅</div>
+                            <h4>First Steps</h4>
+                            <p>First game completed</p>
+                        </div>
+
+                        <div class="achievement">
+                            <div class="medal purple">🚀</div>
+                            <h4>Fast Learner</h4>
+                            <p>Keep learning</p>
+                        </div>
+
+                        <div class="achievement locked">
+                            <div class="medal gray">🏆</div>
+                            <h4>Code Master</h4>
+                            <p>Earn 100 points</p>
+                        </div>
+
+                        <div class="achievement locked">
+                            <div class="medal gray">💎</div>
+                            <h4>Quiz Champion</h4>
+                            <p>Complete 10 quizzes</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="right-column">
+
+                <!-- LEVEL CARD -->
+                <div class="level-card">
+
+                    <div class="level-top">
+                        <span>YOUR JOURNEY</span>
+                        <span>✦</span>
+                    </div>
+
+                    <div class="level-symbol">🚀</div>
+
+                    <h2 id="levelTitle">Beginner</h2>
+
+                    <p>Keep learning and reach the next level.</p>
+
+                    <div class="level-progress">
+                        <div class="level-progress-fill" id="levelBar"></div>
+                    </div>
+
+                    <div class="level-footer">
+                        <span id="levelPoints">0 Points</span>
+                        <span id="nextLevel">Next: 40</span>
+                    </div>
+
+                </div>
+
+                <!-- RECENT ACTIVITY -->
+                <div class="content-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>Recent Activity</h2>
+                            <p>Your latest achievements</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-list" id="activityList">
+
+                        <div class="empty-activity">
+                            <span>✨</span>
+                            <p>Your activities will appear here.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ACCOUNT SETTINGS -->
+                <div class="content-card settings-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <h2>Account Settings</h2>
+                            <p>Manage your account</p>
+                        </div>
+                    </div>
+
+                    <button class="setting-item" id="changePasswordBtn">
+                        <span>🔒</span>
+                        <span>Change Password</span>
+                        <b>›</b>
+                    </button>
+
+                    <button class="setting-item" id="photoBtn">
+                        <span>🖼️</span>
+                        <span>Change Profile Picture</span>
+                        <b>›</b>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- EDIT PROFILE MODAL -->
+        <div class="modal-overlay" id="editModal">
+
+            <div class="modal">
+
+                <div class="modal-heading">
+                    <h2>Edit Profile</h2>
+                    <button id="closeModal">✕</button>
+                </div>
+
+                <form id="profileForm">
+
+                    <label>Full Name</label>
+                    <input type="text" id="nameInput" required>
+
+                    <label>Email Address</label>
+                    <input type="email" id="emailInput" required>
+
+                    <label>Username</label>
+                    <input type="text" id="usernameInput" required>
+
+                    <button type="submit" class="save-btn">
+                        Save Changes
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- CHANGE PASSWORD MODAL -->
+        <div class="modal-overlay" id="passwordModal">
+
+            <div class="modal">
+
+                <div class="modal-heading">
+                    <h2>Change Password</h2>
+                    <button id="closePassword">✕</button>
+                </div>
+
+                <form id="passwordForm">
+
+                    <label>New Password</label>
+                    <input type="password" id="newPassword"
+                           minlength="6" required>
+
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword"
+                           minlength="6" required>
+
+                    <button type="submit" class="save-btn">
+                        Update Password
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- PROFILE PHOTO INPUT -->
+        <input type="file" id="photoInput" accept="image/*" hidden>
+
+        <footer>
+            © 2026 CodeVerse. All Rights Reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- SHARED SIDEBAR JS -->
+<script src="../components/sidebar.js"></script>
+
+<!-- PROFILE JS -->
+<script src="profile.js"></script>
+
+</body>
+</html>
