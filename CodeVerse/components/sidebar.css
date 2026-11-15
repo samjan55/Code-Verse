@@ -1,3 +1,13 @@
+/* Disable sidebar animation during page navigation */
+html.cv-page-loading .cv-sidebar {
+    transition: none !important;
+}
+
+html.cv-page-loading .cv-lamp,
+html.cv-page-loading .cv-lantern-glow {
+    transition: none !important;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -26,10 +36,6 @@
     padding: 22px 15px;
     display: flex;
     flex-direction: column;
-
-    transition: width 0.3s ease,
-                min-width 0.3s ease;
-
     overflow: hidden;
     color: white;
     z-index: 100;
@@ -136,38 +142,158 @@
     white-space: nowrap;
 }
 
-/* NAVIGATION */
+/* NAVIGATION + LANTERN */
 
 .cv-navigation {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
+/* the rope */
+.cv-rope {
+    position: absolute;
+    left: 21px;
+    top: -6px;
+    bottom: -6px;
+    width: 1px;
+    background: rgba(174,185,206,0.25);
+}
+
+/* warm light that follows the lantern */
+/* LIGHT ONLY ON ACTIVE LAMP AREA */
+
+.cv-lantern-glow {
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 210px;
+    height: 65px;
+    pointer-events: none;
+
+    background: radial-gradient(
+        ellipse at 65px 32px,
+        rgba(255, 180, 75, 0.55),
+        rgba(255, 160, 50, 0.22) 40%,
+        transparent 75%
+    );
+
+    filter: blur(12px);
+
+    transform: translateY(
+        calc(var(--y, 0px) - 32px)
+    );
+
+    transition: transform 0.6s ease;
+}
+
+/* Only the illuminated menu item */
+
 .cv-link {
+    opacity: 0.55;
+    transition: opacity 0.4s ease, background 0.4s ease;
+}
+
+.cv-link.active {
+    opacity: 1;
+    background: rgba(255, 174, 73, 0.13);
+    color: #FFFFFF;
+    text-shadow: 0 0 8px rgba(255, 180, 84, 0.7);
+}
+
+/* the lantern */
+.cv-lamp {
+    position: absolute;
+    left: 21px;
+    top: 0;
+    width: 42px;
+    height: 64px;
+    margin-left: -21px;
+    pointer-events: none;
+    z-index: 2;
+    filter:
+    drop-shadow(0 0 8px #FFB454)
+    drop-shadow(0 0 18px #FF9D35)
+    drop-shadow(0 0 30px #FF8C24);
+    transform: translateY(calc(var(--y, 0px) - 36px));
+    transition: transform .6s cubic-bezier(.34,1.56,.64,1);
+}
+
+.cv-lamp svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform-origin: 50% 0;
+    animation: cvSway 3.2s ease-in-out infinite;
+}
+
+.cv-lamp.moving svg {
+    animation: none;
+    transform: rotate(var(--tilt, 0deg));
+    transition: transform .25s;
+}
+
+.cv-flame {
+   filter:
+        drop-shadow(0 0 6px #FFF2B0)
+        drop-shadow(0 0 15px #FFB347);
+}
+
+@keyframes cvSway {
+    0%, 100% { transform: rotate(-3deg); }
+    50%      { transform: rotate(3deg); }
+}
+
+@keyframes cvFlick {
+    to { transform: scale(.92, 1.06); }
+}
+
+/* no animation on first load */
+.cv-navigation.no-anim .cv-lamp,
+.cv-navigation.no-anim .cv-lantern-glow {
+    transition: none;
+}
+
+/* links */
+
+.cv-link {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 15px;
     min-height: 48px;
-    padding: 0 13px;
+    padding: 0 13px 0 56px;        /* space for the lantern */
 
-    color: #AEB9CE;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 11px;
-
-    transition: 0.3s;
     white-space: nowrap;
+
+    /* brightness depends on distance to the lantern */
+    opacity: calc(0.3 + var(--lit, 0) * 0.7);
+    transition: opacity .2s;
 }
 
-.cv-link:hover {
-    background: rgba(36,201,232,0.13);
-    color: white;
+.cv-link .cv-link-text {
+    text-shadow: 0 0 calc(var(--lit, 0) * 18px)
+                 rgba(255,180,84, calc(var(--lit, 0) * 1));
 }
 
 .cv-link.active {
-    background: #24C9E8;
-    color: #080D24;
     font-weight: bold;
+}
+
+/* orange dot on the active link */
+.cv-link.active::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffb454;
+    box-shadow: 0 0 8px #ffb454;
 }
 
 .cv-icon {
@@ -239,7 +365,7 @@
     color: #080D24;
 }
 
-/* COLLAPSED SIDEBAR */
+/* COLLAPSED SIDEBAR (no lantern, icons only) */
 
 .cv-layout.sidebar-collapsed .cv-sidebar {
     width: 82px;
@@ -274,6 +400,35 @@
 .cv-layout.sidebar-collapsed .cv-sidebar-bottom {
     justify-content: center;
     padding: 10px 0;
+}
+
+.cv-layout.sidebar-collapsed .cv-rope,
+.cv-layout.sidebar-collapsed .cv-lamp,
+.cv-layout.sidebar-collapsed .cv-lantern-glow {
+    display: none;
+}
+
+.cv-layout.sidebar-collapsed .cv-link {
+    opacity: 1;
+    color: #AEB9CE;
+}
+
+.cv-layout.sidebar-collapsed .cv-link .cv-link-text {
+    text-shadow: none;
+}
+
+.cv-layout.sidebar-collapsed .cv-link:hover {
+    background: rgba(36,201,232,0.13);
+    color: white;
+}
+
+.cv-layout.sidebar-collapsed .cv-link.active {
+    background: #24C9E8;
+    color: #080D24;
+}
+
+.cv-layout.sidebar-collapsed .cv-link.active::after {
+    display: none;
 }
 
 /* MAIN CONTENT */
@@ -324,5 +479,31 @@
 
     .cv-sidebar-bottom {
         padding: 10px 0;
+    }
+
+    /* no lantern on mobile */
+    .cv-rope,
+    .cv-lamp,
+    .cv-lantern-glow {
+        display: none;
+    }
+
+    .cv-link {
+        opacity: 1;
+        color: #AEB9CE;
+    }
+
+    .cv-link:hover {
+        background: rgba(36,201,232,0.13);
+        color: white;
+    }
+
+    .cv-link.active {
+        background: #24C9E8;
+        color: #080D24;
+    }
+
+    .cv-link.active::after {
+        display: none;
     }
 }

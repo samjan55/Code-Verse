@@ -1,104 +1,68 @@
- document.addEventListener("DOMContentLoaded", function () {
+ (function () {
 
-    const headerContainer = document.getElementById("header-container");
+    const container = document.getElementById("header-container");
+    if (!container) return;
 
-    if (!headerContainer) {
-        console.error("Header container not found!");
-        return;
-    }
+    const pages = {
+        dashboard:     { icon: "⌂", title: "Dashboard",     tagline: "Welcome to your learning journey." },
+        learning:      { icon: "▣", title: "Learning",      tagline: "Learn. Practice. Build amazing projects." },
+        quiz:          { icon: "✎", title: "Quiz",          tagline: "Test your knowledge. Grow your skills." },
+        entertainment: { icon: "♧", title: "Entertainment", tagline: "Make learning fun with coding games." },
+        profile:       { icon: "◉", title: "My Profile",    tagline: "Manage your information and progress." }
+    };
 
-    fetch("../components/header.html")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Header file not found");
-            }
+    const current = pages[document.body.dataset.page] || pages.dashboard;
 
-            return response.text();
-        })
+    let points = 50;
+    try { points = localStorage.getItem("funPoints") || 50; } catch (e) {}
 
-        .then(html => {
+    container.innerHTML = `
+<header class="cv-header">
 
-            headerContainer.innerHTML = html;
+    <span class="cv-header-code">&lt;/&gt;</span>
 
-            const page = document.body.dataset.page;
+    <div class="cv-header-left">
 
-            const pages = {
+        <div class="cv-header-breadcrumb">
+            <span>✦ CODEVERSE</span>
+            <i>/</i>
+            <strong>${current.title.toUpperCase()}</strong>
+        </div>
 
-                dashboard: {
-                    section: "HOME",
-                    page: "DASHBOARD",
-                    title: "Dashboard",
-                    description: "Welcome to your CodeVerse learning journey."
-                },
+        <div class="cv-header-titlerow">
+            <span class="cv-header-icon">${current.icon}</span>
+            <h1 class="cv-header-title">${current.title}</h1>
+        </div>
 
-                learning: {
-                    section: "LEARNING",
-                    page: "JAVASCRIPT",
-                    title: "JavaScript Learning",
-                    description: "Learn JavaScript. Practice coding. Build amazing projects."
-                },
+        <p class="cv-header-tagline">${current.tagline}</p>
 
-                quiz: {
-                    section: "LEARNING",
-                    page: "QUIZ",
-                    title: "Quiz Center",
-                    description: "Test your knowledge. Challenge yourself. Grow your skills."
-                },
+    </div>
 
-                entertainment: {
-                    section: "FUN ZONE",
-                    page: "ENTERTAINMENT",
-                    title: "Entertainment Zone",
-                    description: "Make learning fun with exciting coding games and challenges."
-                },
+    <div class="cv-header-right">
 
-                profile: {
-                    section: "ACCOUNT",
-                    page: "MY PROFILE",
-                    title: "My Profile",
-                    description: "Manage your personal information and progress."
-                }
+        <div class="cv-header-points">
+            <span>⭐</span>
+            <div>
+                <strong id="headerPoints">${points}</strong>
+                <small>Total Points</small>
+            </div>
+        </div>
 
-            };
+        <button class="cv-header-bell" title="Notifications">
+            🔔
+            <span class="cv-header-dot"></span>
+        </button>
 
-            const current = pages[page] || pages.dashboard;
+        <div class="cv-header-user">
+            <div class="cv-header-avatar">U</div>
+            <div class="cv-header-user-info">
+                <strong>CodeVerse Student</strong>
+                <small>Student Account</small>
+            </div>
+        </div>
 
-            // UPDATE HEADER TEXT
+    </div>
 
-            const headerSection = document.getElementById("headerSection");
-            const headerPage = document.getElementById("headerPage");
-            const headerTitle = document.getElementById("headerTitle");
-            const headerDescription = document.getElementById("headerDescription");
-            const headerPoints = document.getElementById("headerPoints");
+</header>`;
 
-            if (headerSection) {
-                headerSection.textContent = current.section;
-            }
-
-            if (headerPage) {
-                headerPage.textContent = current.page;
-            }
-
-            if (headerTitle) {
-                headerTitle.textContent = current.title;
-            }
-
-            if (headerDescription) {
-                headerDescription.textContent = current.description;
-            }
-
-            // LOAD POINTS
-
-            const points = localStorage.getItem("funPoints") || 50;
-
-            if (headerPoints) {
-                headerPoints.textContent = points;
-            }
-
-        })
-
-        .catch(error => {
-            console.error("Header Error:", error);
-        });
-
-});
+})();

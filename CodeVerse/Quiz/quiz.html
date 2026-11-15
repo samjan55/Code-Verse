@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeVerse | Quiz Center</title>
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/sidebar.css">
+    <link rel="stylesheet" href="../components/card.css">
+</head>
+
+<body data-page="quiz">
+
+    <div class="cv-layout">
+
+        <aside id="sidebar-container"></aside>
+
+        <main class="quiz-main">
+
+            <div id="header-container"></div>
+
+            <section class="quiz-welcome">
+                <div>
+                    <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+                    <h2>Ready to Challenge Yourself?</h2>
+                    <p>Choose a subject, answer questions and earn points.</p>
+                </div>
+                <div class="welcome-icon">🧠</div>
+            </section>
+
+            <section class="quiz-stats">
+                <div class="stat-card">
+                    <div class="stat-icon purple">📚</div>
+                    <div><span>Total Quizzes</span><h3 id="totalQuizzes">6</h3></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon cyan">🏆</div>
+                    <div><span>Completed</span><h3 id="completedQuizzes">0</h3></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">⭐</div>
+                    <div><span>Total Points</span><h3 id="totalPoints">50</h3></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">🎯</div>
+                    <div><span>Average Score</span><h3 id="averageScore">0%</h3></div>
+                </div>
+            </section>
+
+            <section id="quizSelection" class="quiz-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Choose Your Quiz</h2>
+                        <p>Select a subject to begin your challenge.</p>
+                    </div>
+                    <span class="available-label">6 QUIZZES AVAILABLE</span>
+                </div>
+
+                <div id="quizCards" class="quiz-grid"></div>
+            </section>
+
+            <section id="quizPlay" class="quiz-play hidden">
+                <div class="quiz-top">
+                    <button id="exitQuiz" class="back-button">← Back to Quizzes</button>
+                    <div class="timer-box">⏱ <span id="timer">15:00</span></div>
+                </div>
+
+                <div class="quiz-progress-info">
+                    <div>
+                        <span id="questionCounter">Question 1 of 5</span>
+                        <h2 id="activeQuizTitle">HTML Quiz</h2>
+                    </div>
+                    <span id="progressPercent">20%</span>
+                </div>
+
+                <div class="progress-track">
+                    <div id="questionProgress" class="progress-fill"></div>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-label">YOUR QUESTION</span>
+                    <h2 id="questionText">Question text goes here?</h2>
+                    <div id="answerOptions" class="answer-options"></div>
+                </div>
+
+                <div class="question-actions">
+                    <button id="previousQuestion" class="secondary-button">← Previous</button>
+                    <button id="nextQuestion" class="primary-button">Next Question →</button>
+                    <button id="submitQuiz" class="primary-button hidden">Submit Quiz ✓</button>
+                </div>
+            </section>
+
+            <section id="quizResult" class="quiz-result hidden">
+                <div class="result-icon">🏆</div>
+                <span class="eyebrow">QUIZ COMPLETED</span>
+                <h2 id="resultTitle">Great Job!</h2>
+                <p id="resultMessage">You have completed your quiz.</p>
+
+                <div class="score-circle">
+                    <strong id="resultScore">0%</strong>
+                    <span>Your Score</span>
+                </div>
+
+                <div class="result-stats">
+                    <div><strong id="correctAnswers">0</strong><span>Correct</span></div>
+                    <div><strong id="wrongAnswers">0</strong><span>Incorrect</span></div>
+                    <div><strong id="earnedPoints">0</strong><span>Points Earned</span></div>
+                </div>
+
+                <div class="result-actions">
+                    <button id="tryAgain" class="primary-button">Try Again ↻</button>
+                    <button id="backToQuizzes" class="secondary-button">All Quizzes</button>
+                </div>
+            </section>
+
+            <footer class="quiz-footer">
+                <p>© 2026 CodeVerse. Learn, Practice & Grow.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="../components/sidebar.js"></script>
+    <script src="../components/header.js"></script>
+    <script src="quiz.js"></script>
+
+</body>
+</html>

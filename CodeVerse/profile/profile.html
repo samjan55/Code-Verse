@@ -7,8 +7,10 @@
 
     <title>CodeVerse | My Profile</title>
 
-    <!-- SHARED SIDEBAR CSS -->
+    <!-- SHARED CSS -->
+    <link rel="stylesheet" href="../components/card.css">
     <link rel="stylesheet" href="../components/sidebar.css">
+    <link rel="stylesheet" href="../components/header.css">
 
     <!-- PROFILE CSS -->
     <link rel="stylesheet" href="profile.css">
@@ -20,24 +22,14 @@
 
     <!-- SHARED SIDEBAR -->
     <div id="sidebar-container"></div>
+    <script src="../components/sidebar.js"></script>
 
     <!-- MAIN CONTENT -->
     <main class="cv-main">
 
-        <!-- TOP BAR -->
-        <header class="topbar">
-
-            <div>
-                <p class="breadcrumb">CODEVERSE / MY PROFILE</p>
-                <h2>My Profile</h2>
-            </div>
-
-            <div class="top-actions">
-                <button class="notification">♧</button>
-                <div class="top-avatar" id="topAvatar">U</div>
-            </div>
-
-        </header>
+        <!-- SHARED HEADER -->
+        <div id="header-container"></div>
+        <script src="../components/header.js"></script>
 
         <!-- PROFILE HERO -->
         <section class="profile-hero">
@@ -47,9 +39,7 @@
             <div class="profile-main">
 
                 <div class="profile-photo" id="profilePhoto">
-                    <img id="profileImage"
-                         src="./profile.jpg"
-                         alt="Profile Picture">
+                    <img id="profileImage" src="./profile.jpg" alt="Profile Picture">
                 </div>
 
                 <div class="profile-details">
@@ -68,9 +58,7 @@
 
                 </div>
 
-                <button class="edit-btn" id="editProfileBtn">
-                    ✎ Edit Profile
-                </button>
+                <button class="edit-btn" id="editProfileBtn">✎ Edit Profile</button>
 
             </div>
 
@@ -127,10 +115,7 @@
                             <h2>Personal Information</h2>
                             <p>Your account details</p>
                         </div>
-
-                        <button class="text-btn" id="editInfoBtn">
-                            Edit Details
-                        </button>
+                        <button class="text-btn" id="editInfoBtn">Edit Details</button>
                     </div>
 
                     <div class="info-grid">
@@ -167,7 +152,6 @@
                             <h2>Learning Progress</h2>
                             <p>Track your programming skills</p>
                         </div>
-
                         <span class="progress-label">MY SKILLS</span>
                     </div>
 
@@ -294,12 +278,10 @@
                     </div>
 
                     <div class="activity-list" id="activityList">
-
                         <div class="empty-activity">
                             <span>✨</span>
                             <p>Your activities will appear here.</p>
                         </div>
-
                     </div>
 
                 </div>
@@ -353,9 +335,7 @@
                     <label>Username</label>
                     <input type="text" id="usernameInput" required>
 
-                    <button type="submit" class="save-btn">
-                        Save Changes
-                    </button>
+                    <button type="submit" class="save-btn">Save Changes</button>
 
                 </form>
 
@@ -376,16 +356,12 @@
                 <form id="passwordForm">
 
                     <label>New Password</label>
-                    <input type="password" id="newPassword"
-                           minlength="6" required>
+                    <input type="password" id="newPassword" minlength="6" required>
 
                     <label>Confirm Password</label>
-                    <input type="password" id="confirmPassword"
-                           minlength="6" required>
+                    <input type="password" id="confirmPassword" minlength="6" required>
 
-                    <button type="submit" class="save-btn">
-                        Update Password
-                    </button>
+                    <button type="submit" class="save-btn">Update Password</button>
 
                 </form>
 
@@ -403,9 +379,6 @@
     </main>
 
 </div>
-
-<!-- SHARED SIDEBAR JS -->
-<script src="../components/sidebar.js"></script>
 
 <!-- PROFILE JS -->
 <script src="profile.js"></script>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeVerse | Dashboard</title>
+    
+    <link rel="stylesheet" href="../components/card.css">
+    <link rel="stylesheet" href="../components/sidebar.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body data-page="dashboard">
+
+    <div class="cv-layout">
+
+        <!-- SIDEBAR -->
+        <div id="sidebar-container"></div>
+
+        <!-- MAIN CONTENT -->
+        <main class="cv-main">
+
+            <!-- SHARED HEADER -->
+            <div id="header-container"></div>
+
+            <div class="dashboard-content">
+
+                <!-- WELCOME -->
+                <section class="welcome-section">
+                    <div>
+                        <span class="welcome-label">YOUR LEARNING SPACE</span>
+                        <h2>Welcome back, Student! 👋</h2>
+                        <p>Keep learning, keep growing. Your coding journey continues here.</p>
+                        <div class="welcome-date" id="currentDate"></div>
+                    </div>
+
+                    <div class="welcome-art">
+                        <div class="art-circle">
+                            <span>💻</span>
+                        </div>
+                        <div class="art-small-circle">✦</div>
+                        <div class="art-code">&lt;/&gt;</div>
+                    </div>
+                </section>
+
+                <!-- STATISTICS -->
+                <section class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon cyan">📚</div>
+                            <span class="stat-tag">Courses</span>
+                        </div>
+                        <h3 id="courseCount">4</h3>
+                        <p>Enrolled Courses</p>
+                        <div class="stat-bottom">
+                            <span>Keep exploring</span>
+                            <span>↗</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon purple">🎯</div>
+                            <span class="stat-tag">Lessons</span>
+                        </div>
+                        <h3 id="lessonCount">12</h3>
+                        <p>Completed Lessons</p>
+                        <div class="stat-bottom">
+                            <span>Great progress</span>
+                            <span>↗</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon orange">⭐</div>
+                            <span class="stat-tag">Points</span>
+                        </div>
+                        <h3 id="pointsCount">50</h3>
+                        <p>Total Points</p>
+                        <div class="stat-bottom">
+                            <span>Earn more points</span>
+                            <span>↗</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon green">📈</div>
+                            <span class="stat-tag">Progress</span>
+                        </div>
+                        <h3 id="progressCount">35%</h3>
+                        <p>Learning Progress</p>
+                        <div class="mini-progress">
+                            <span id="miniProgress"></span>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- MAIN GRID -->
+                <section class="dashboard-grid">
+
+                    <!-- CONTINUE LEARNING -->
+                    <div class="dashboard-card continue-card">
+
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-label">PICK UP WHERE YOU LEFT OFF</span>
+                                <h3>Continue Learning</h3>
+                            </div>
+                            <a href="../Learning/learning.html">View All ↗</a>
+                        </div>
+
+                        <div class="continue-content">
+
+                            <div class="course-visual javascript-visual">
+                                <span class="course-symbol">JS</span>
+                                <span class="visual-caption">JAVASCRIPT</span>
+                            </div>
+
+                            <div class="continue-info">
+                                <span class="course-category">FRONTEND DEVELOPMENT</span>
+                                <h4>JavaScript Fundamentals</h4>
+                                <p>Learn variables, functions, arrays and more.</p>
+
+                                <div class="progress-heading">
+                                    <span>Your Progress</span>
+                                    <strong>45%</strong>
+                                </div>
+
+                                <div class="progress-track">
+                                    <div class="progress-fill" style="width:45%"></div>
+                                </div>
+
+                                <a href="../Learning/learning.html" class="primary-btn">
+                                    Continue Learning <span>→</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- WEEKLY ACTIVITY -->
+                    <div class="dashboard-card activity-card">
+
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-label">YOUR CONSISTENCY</span>
+                                <h3>Weekly Activity</h3>
+                            </div>
+                            <span class="activity-badge">This Week</span>
+                        </div>
+
+                        <div class="activity-summary">
+                            <div>
+                                <h2>8.5 <small>hrs</small></h2>
+                                <p>Learning time</p>
+                            </div>
+                            <span class="activity-trend">↗ Active week</span>
+                        </div>
+
+                        <div class="chart" aria-label="Weekly learning activity chart">
+
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:45%"></div>
+                                <span>Mon</span>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:70%"></div>
+                                <span>Tue</span>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:55%"></div>
+                                <span>Wed</span>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="chart-bar highlight" style="height:90%"></div>
+                                <span>Thu</span>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:65%"></div>
+                                <span>Fri</span>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:35%"></div>
+                                <span>Sat</span>
+                            </div>
+
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:50%"></div>
+                                <span>Sun</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- MY COURSES -->
+                    <div class="dashboard-card courses-card">
+
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-label">BUILD YOUR SKILLS</span>
+                                <h3>My Courses</h3>
+                            </div>
+                            <a href="../Learning/learning.html">Explore All ↗</a>
+                        </div>
+
+                        <div class="course-list">
+
+                            <div class="course-item">
+                                <div class="course-icon html-icon">5</div>
+                                <div class="course-details">
+                                    <h4>HTML Fundamentals</h4>
+                                    <p>12 Lessons · Beginner</p>
+                                    <div class="course-progress">
+                                        <span style="width:85%"></span>
+                                    </div>
+                                </div>
+                                <strong>85%</strong>
+                            </div>
+
+                            <div class="course-item">
+                                <div class="course-icon css-icon">3</div>
+                                <div class="course-details">
+                                    <h4>CSS Styling</h4>
+                                    <p>16 Lessons · Beginner</p>
+                                    <div class="course-progress">
+                                        <span style="width:60%"></span>
+                                    </div>
+                                </div>
+                                <strong>60%</strong>
+                            </div>
+
+                            <div class="course-item">
+                                <div class="course-icon js-icon">JS</div>
+                                <div class="course-details">
+                                    <h4>JavaScript</h4>
+                                    <p>20 Lessons · Intermediate</p>
+                                    <div class="course-progress">
+                                        <span style="width:45%"></span>
+                                    </div>
+                                </div>
+                                <strong>45%</strong>
+                            </div>
+
+                            <div class="course-item">
+                                <div class="course-icon react-icon">⚛</div>
+                                <div class="course-details">
+                                    <h4>React Basics</h4>
+                                    <p>14 Lessons · Intermediate</p>
+                                    <div class="course-progress">
+                                        <span style="width:10%"></span>
+                                    </div>
+                                </div>
+                                <strong>10%</strong>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- DAILY GOAL -->
+                    <div class="dashboard-card goal-card">
+
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-label">SMALL STEPS, BIG RESULTS</span>
+                                <h3>Daily Learning Goal</h3>
+                            </div>
+                            <span class="goal-icon">🏆</span>
+                        </div>
+
+                        <div class="goal-circle" id="goalCircle">
+                            <div class="goal-inner">
+                                <strong id="goalPercent">70%</strong>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+
+                        <h4>You're doing great!</h4>
+                        <p>Complete your daily learning target and keep your progress going.</p>
+
+                        <div class="goal-details">
+                            <span>Daily target</span>
+                            <strong>35 / 50 minutes</strong>
+                        </div>
+
+                        <a href="../Learning/learning.html" class="goal-btn">
+                            Continue Learning →
+                        </a>
+
+                    </div>
+
+                    <!-- RECENT ACTIVITY -->
+                    <div class="dashboard-card recent-card">
+
+                        <div class="section-heading">
+                            <div>
+                                <span class="section-label">YOUR LATEST WORK</span>
+                                <h3>Recent Activity</h3>
+                            </div>
+                            <a href="../Learning/learning.html">View All ↗</a>
+                        </div>
+
+                        <div class="recent-list">
+
+                            <div class="recent-item">
+                                <div class="recent-icon html-icon">5</div>
+                                <div>
+                                    <h4>Completed HTML Basics</h4>
+                                    <p>HTML Fundamentals</p>
+                                </div>
+                                <span>Today</span>
+                            </div>
+
+                            <div class="recent-item">
+                                <div class="recent-icon purple-icon">✓</div>
+                                <div>
+                                    <h4>Passed CSS Quiz</h4>
+                                    <p>CSS Styling</p>
+                                </div>
+                                <span>Yesterday</span>
+                            </div>
+
+                            <div class="recent-item">
+                                <div class="recent-icon js-icon">JS</div>
+                                <div>
+                                    <h4>Started JavaScript</h4>
+                                    <p>JavaScript Fundamentals</p>
+                                </div>
+                                <span>2 days ago</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- BOTTOM BANNER -->
+                <section class="motivation-banner">
+                    <div>
+                        <span>YOUR FUTURE IS WRITTEN IN CODE</span>
+                        <h3>Every expert was once a beginner.</h3>
+                        <p>Keep practicing. Keep creating. Keep believing in yourself.</p>
+                    </div>
+                    <div class="banner-symbol">&lt;/&gt;</div>
+                </section>
+
+                <footer class="dashboard-footer">
+                    © 2026 CodeVerse. Learn. Build. Grow.
+                </footer>
+
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../components/sidebar.js"></script>
+    <script src="../components/header.js"></script>
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

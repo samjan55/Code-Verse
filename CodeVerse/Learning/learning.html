@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeVerse - Learning</title>
+    <link rel="stylesheet" href="learning.css">
+    <link rel="stylesheet" href="../components/sidebar.css">
+    <link rel="stylesheet" href="../components/header.css">
+    <link rel="stylesheet" href="../components/card.css">
+    
+</head>
+
+<body data-page="learning">
+
+<div class="cv-layout">
+    <div id="sidebar-container"></div>
+
+    <main class="main-content">
+        <div id="header-container"></div>
+
+        <section class="hero">
+            <div>
+                <span>CODEVERSE ACADEMY</span>
+                <h1>Explore. Learn. Build.</h1>
+                <p>Start your journey from computer basics to professional web development.</p>
+                <a href="#courses" class="hero-btn">Explore Courses →</a>
+            </div>
+            <div class="hero-icon">💻</div>
+        </section>
+
+        <section class="section-title">
+            <div>
+                <small>YOUR JOURNEY</small>
+                <h2>Your Learning Roadmap</h2>
+                <p>Follow the learning stages step by step.</p>
+            </div>
+        </section>
+
+        <section class="roadmap" id="roadmap"></section>
+
+        <section class="section-title" id="courses">
+            <div>
+                <small>START LEARNING</small>
+                <h2>Explore Our Courses</h2>
+                <p>Select a subject to explore its modules and lessons.</p>
+            </div>
+        </section>
+
+        <section class="course-grid" id="courseGrid"></section>
+
+        <section class="lessons-area" id="lessonsArea" hidden>
+            <div class="lessons-heading">
+                <button id="backToCourses">← Back to Courses</button>
+                <small>YOUR LEARNING CLASSROOM</small>
+                <h2 id="selectedCourseTitle"></h2>
+                <p id="selectedCourseDescription"></p>
+
+                <div class="progress-info">
+                    <span id="progressText">0% completed</span>
+                    <span id="lessonCount">0 lessons</span>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+
+            <div class="lessons-layout">
+                <div class="lesson-list" id="lessonList"></div>
+                <div class="lesson-content" id="lessonContent">
+                    <div class="empty-lesson">
+                        <div>📚</div>
+                        <h2>Welcome to CodeVerse</h2>
+                        <p>Choose a lesson to begin learning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="learning-footer">
+            <h2>Every expert was once a beginner.</h2>
+            <p>Keep learning. Keep building. Keep growing.</p>
+        </footer>
+    </main>
+</div>
+
+<script src="../components/sidebar.js"></script>
+<script src="../components/header.js"></script>
+<script src="learning.js"></script>
+
+</body>
+</html>
